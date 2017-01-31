@@ -1,0 +1,10 @@
+FROM gizmotronic/alpine-build:latest
+
+RUN apk add --no-cache --update curl unzip \
+    && rm -rf /var/cache/apk/* \
+
+WORKDIR	/build
+
+RUN curl -LO 'https://github.com/dxtr/nullidentd/archive/master.zip' \
+    && unzip -o master.zip \
+    && gcc -s -Os -D_POSIX_SOURCE -std=c99 nullidentd-master/nullidentd.c -o nullidentd
