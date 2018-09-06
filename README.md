@@ -18,10 +18,6 @@ Be aware that the protocol disallows ASCII NUL, LF, and CR characters. The strin
 
 # How do I build it?
 
-At minimum, you must have Docker, curl, make, and unzip installed.
+Run this command:
 
-If you have these, you should be able to simply run this command:
-
-`$ make`
-
-This will pull a build image, download the nullidentd package, compile the executable, then extract and build it into the final Docker image.
+`$ docker build -t nullidentd .`
